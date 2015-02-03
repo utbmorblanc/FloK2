@@ -1,0 +1,13 @@
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\ApplicationIcon.png
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Background.png
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\FloK.dll
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\FloK.pdb
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\AppManifest.xaml
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\FloK.xap
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\App.g.i.cs
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\MenuPage.g.i.cs
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.g.resources
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.dll
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.pdb
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\XapCacheFile.xml
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\MainPage.g.i.cs
