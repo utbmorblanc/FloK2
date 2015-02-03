@@ -15,6 +15,9 @@ namespace FloK
 {
     public partial class MainPage : PhoneApplicationPage
     {
+
+        public ServiceReference1.Service1Client flok_ws;
+
         // Constructeur
 
         #region Constructor
@@ -22,6 +25,7 @@ namespace FloK
         public MainPage()
         {
             InitializeComponent();
+            flok_ws = new ServiceReference1.Service1Client();
         }
 
         #endregion
@@ -39,8 +43,8 @@ namespace FloK
             {
 
                 // on va checker s'il existe dans la base, si oui; on le change d'écran (vers menu principale)
-
-                NavigationService.Navigate(new Uri("/MenuPage.xaml", UriKind.Relative));
+                flok_ws.isUserInDBAsync(this.tb_login.Text, this.tb_pwd.Text);
+                flok_ws.isUserInDBCompleted += flok_ws_userOk;                
             }
             else if (!string.IsNullOrEmpty(this.tb_login.Text))
             {
@@ -77,6 +81,31 @@ namespace FloK
         }
 
         #endregion
+
+        #region AsyncResults
+
+        void flok_ws_userOk(object sender, ServiceReference1.isUserInDBCompletedEventArgs e)
+        {
+            try
+            {
+                //bool isError = bool.Parse(e.Result.ToString());
+                if (e.Result)
+                {
+                    NavigationService.Navigate(new Uri("/MenuPage.xaml", UriKind.Relative));
+                }
+                else
+                {
+                    //afficher erreur de login ou "creer un identifiant ?"
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        #endregion
+
 
     }
 }

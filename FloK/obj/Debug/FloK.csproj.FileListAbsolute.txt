@@ -1,4 +1,3 @@
-C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\ApplicationIcon.png
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Background.png
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\FloK.dll
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\FloK.pdb

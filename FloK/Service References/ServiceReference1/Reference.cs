@@ -173,6 +173,11 @@ namespace FloK.ServiceReference1 {
         System.IAsyncResult BeginGetAllStations(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> EndGetAllStations(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/isUserInDB", ReplyAction="http://tempuri.org/IService1/isUserInDBResponse")]
+        System.IAsyncResult BeginisUserInDB(string login, string password, System.AsyncCallback callback, object asyncState);
+        
+        bool EndisUserInDB(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -200,6 +205,25 @@ namespace FloK.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class isUserInDBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public isUserInDBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<FloK.ServiceReference1.IService1>, FloK.ServiceReference1.IService1 {
         
         private BeginOperationDelegate onBeginGetAllStationsDelegate;
@@ -207,6 +231,12 @@ namespace FloK.ServiceReference1 {
         private EndOperationDelegate onEndGetAllStationsDelegate;
         
         private System.Threading.SendOrPostCallback onGetAllStationsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginisUserInDBDelegate;
+        
+        private EndOperationDelegate onEndisUserInDBDelegate;
+        
+        private System.Threading.SendOrPostCallback onisUserInDBCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -263,6 +293,8 @@ namespace FloK.ServiceReference1 {
         
         public event System.EventHandler<GetAllStationsCompletedEventArgs> GetAllStationsCompleted;
         
+        public event System.EventHandler<isUserInDBCompletedEventArgs> isUserInDBCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
@@ -309,6 +341,54 @@ namespace FloK.ServiceReference1 {
                 this.onGetAllStationsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllStationsCompleted);
             }
             base.InvokeAsync(this.onBeginGetAllStationsDelegate, null, this.onEndGetAllStationsDelegate, this.onGetAllStationsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult FloK.ServiceReference1.IService1.BeginisUserInDB(string login, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginisUserInDB(login, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool FloK.ServiceReference1.IService1.EndisUserInDB(System.IAsyncResult result) {
+            return base.Channel.EndisUserInDB(result);
+        }
+        
+        private System.IAsyncResult OnBeginisUserInDB(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string login = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return ((FloK.ServiceReference1.IService1)(this)).BeginisUserInDB(login, password, callback, asyncState);
+        }
+        
+        private object[] OnEndisUserInDB(System.IAsyncResult result) {
+            bool retVal = ((FloK.ServiceReference1.IService1)(this)).EndisUserInDB(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnisUserInDBCompleted(object state) {
+            if ((this.isUserInDBCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.isUserInDBCompleted(this, new isUserInDBCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void isUserInDBAsync(string login, string password) {
+            this.isUserInDBAsync(login, password, null);
+        }
+        
+        public void isUserInDBAsync(string login, string password, object userState) {
+            if ((this.onBeginisUserInDBDelegate == null)) {
+                this.onBeginisUserInDBDelegate = new BeginOperationDelegate(this.OnBeginisUserInDB);
+            }
+            if ((this.onEndisUserInDBDelegate == null)) {
+                this.onEndisUserInDBDelegate = new EndOperationDelegate(this.OnEndisUserInDB);
+            }
+            if ((this.onisUserInDBCompletedDelegate == null)) {
+                this.onisUserInDBCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnisUserInDBCompleted);
+            }
+            base.InvokeAsync(this.onBeginisUserInDBDelegate, new object[] {
+                        login,
+                        password}, this.onEndisUserInDBDelegate, this.onisUserInDBCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -396,6 +476,20 @@ namespace FloK.ServiceReference1 {
             public System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> EndGetAllStations(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> _result = ((System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station>)(base.EndInvoke("GetAllStations", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginisUserInDB(string login, string password, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = login;
+                _args[1] = password;
+                System.IAsyncResult _result = base.BeginInvoke("isUserInDB", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndisUserInDB(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("isUserInDB", _args, result)));
                 return _result;
             }
         }

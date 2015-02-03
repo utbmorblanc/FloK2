@@ -11,7 +11,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" DataContext="{Binding}">
 
     <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -23,17 +23,18 @@
         <!--TitlePanel contient le nom de l'application et le titre de la page-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="ApplicationTitle" Text="FloK" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="FloK" Text="Se connecter" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="FloK" Text="Connection" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox Height="72" HorizontalAlignment="Left" Margin="63,215,0,0" Name="tb_login" Text="" VerticalAlignment="Top" Width="349" TextChanged="tb_login_TextChanged" />
-            <TextBox Height="72" HorizontalAlignment="Left" Margin="63,347,0,0" Name="tb_pwd" Text="" VerticalAlignment="Top" Width="349" TextChanged="tb_pwd_TextChanged" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="77,179,0,0" Name="lb_login" Text="Please enter your login:" VerticalAlignment="Top" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="77,311,0,0" Name="lb_pwd" Text="Please enter your password:" VerticalAlignment="Top" />
-            <Button Content="&lt; Go" Height="72" HorizontalAlignment="Left" Margin="292,473,0,0" Name="btn_login" VerticalAlignment="Top" Width="120" Click="btn_login_Click" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="103,437,0,0" Name="tb_error" Text="" VerticalAlignment="Top" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="63,277,0,0" Name="tb_login" Text="" VerticalAlignment="Top" Width="349" TextChanged="tb_login_TextChanged" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="63,409,0,0" Name="tb_pwd" Text="" VerticalAlignment="Top" Width="349" TextChanged="tb_pwd_TextChanged" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="77,241,0,0" Name="lb_login" Text="Please enter your login:" VerticalAlignment="Top" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="77,373,0,0" Name="lb_pwd" Text="Please enter your password:" VerticalAlignment="Top" />
+            <Button Content="&lt; Go" Height="72" HorizontalAlignment="Left" Margin="292,509,0,0" Name="btn_login" VerticalAlignment="Top" Width="120" Click="btn_login_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="0,473,0,0" Name="tb_error" Text="" VerticalAlignment="Top" Width="456" TextAlignment="Center" Foreground="Red" />
+            <Image Height="221" HorizontalAlignment="Left" Margin="105,-14,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="264" Source="/FloK;component/ApplicationIcon.png" />
         </Grid>
     </Grid>
  
