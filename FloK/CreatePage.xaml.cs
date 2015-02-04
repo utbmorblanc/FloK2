@@ -10,7 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace FloK
 {
