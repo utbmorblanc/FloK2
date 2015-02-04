@@ -7,11 +7,23 @@
       <xsd:import schemaLocation="http://localhost:23528/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FloKWS" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_GetNearestStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestStations" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNearestStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestStationsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetAllStations_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllStations" />
   </wsdl:message>
   <wsdl:message name="IService1_GetAllStations_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isLoginInDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:isLoginInDB" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isLoginInDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isLoginInDBResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_isUserInDB_InputMessage">
     <wsdl:part name="parameters" element="tns:isUserInDB" />
@@ -19,18 +31,45 @@
   <wsdl:message name="IService1_isUserInDB_OutputMessage">
     <wsdl:part name="parameters" element="tns:isUserInDBResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="GetNearestStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNearestStations" message="tns:IService1_GetNearestStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNearestStationsResponse" message="tns:IService1_GetNearestStations_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllStations">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllStations" message="tns:IService1_GetAllStations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllStationsResponse" message="tns:IService1_GetAllStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isLoginInDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/isLoginInDB" message="tns:IService1_isLoginInDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/isLoginInDBResponse" message="tns:IService1_isLoginInDB_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="isUserInDB">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/isUserInDB" message="tns:IService1_isUserInDB_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/isUserInDBResponse" message="tns:IService1_isUserInDB_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateUser" message="tns:IService1_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateUserResponse" message="tns:IService1_CreateUser_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNearestStations">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNearestStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllStations">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllStations" style="document" />
       <wsdl:input>
@@ -40,8 +79,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="isLoginInDB">
+      <soap:operation soapAction="http://tempuri.org/IService1/isLoginInDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="isUserInDB">
       <soap:operation soapAction="http://tempuri.org/IService1/isUserInDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

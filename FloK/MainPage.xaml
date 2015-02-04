@@ -35,6 +35,7 @@
             <Button Content="&lt; Go" Height="72" HorizontalAlignment="Left" Margin="292,509,0,0" Name="btn_login" VerticalAlignment="Top" Width="120" Click="btn_login_Click" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="0,473,0,0" Name="tb_error" Text="" VerticalAlignment="Top" Width="456" TextAlignment="Center" Foreground="Red" />
             <Image Height="221" HorizontalAlignment="Left" Margin="105,-14,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="264" Source="/FloK;component/ApplicationIcon.png" />
+            <HyperlinkButton Content="Create an account" Height="30" HorizontalAlignment="Left" Margin="60,536,0,0" Name="link_create_account" VerticalAlignment="Top" Width="217" Click="link_create_account_Click" Foreground="#FF56A7E8" />
         </Grid>
     </Grid>
  

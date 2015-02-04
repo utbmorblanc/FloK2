@@ -41,7 +41,6 @@ namespace FloK
         {
             if (!string.IsNullOrEmpty(this.tb_login.Text) && !string.IsNullOrEmpty(this.tb_pwd.Text))
             {
-
                 // on va checker s'il existe dans la base, si oui; on le change d'écran (vers menu principale)
                 flok_ws.isUserInDBAsync(this.tb_login.Text, this.tb_pwd.Text);
                 flok_ws.isUserInDBCompleted += flok_ws_userOk;                
@@ -105,6 +104,18 @@ namespace FloK
         }
 
         #endregion
+
+        private void link_create_account_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                NavigationService.Navigate(new Uri("/CreatePage.xaml", UriKind.Relative));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
 
     }

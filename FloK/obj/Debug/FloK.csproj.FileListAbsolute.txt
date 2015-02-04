@@ -24,3 +24,8 @@ C:\Users\val\Documents\FloK2\FloK\obj\Debug\FloK.pdb
 C:\Users\val\Documents\FloK2\FloK\obj\Debug\XapCacheFile.xml
 C:\Users\val\Documents\FloK2\FloK\obj\Debug\FindPage.g.i.cs
 C:\Users\val\Documents\FloK2\FloK\obj\Debug\Page1.g.i.cs
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FindPage.g.i.cs
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\Page1.g.i.cs
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Microsoft.Phone.Controls.Maps.dll
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\CreatePage.g.i.cs

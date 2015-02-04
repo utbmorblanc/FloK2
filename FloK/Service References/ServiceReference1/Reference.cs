@@ -28,13 +28,15 @@ namespace FloK.ServiceReference1 {
         
         private string addresse_city_stationField;
         
-        private string gps_stationField;
-        
         private int height_stationField;
         
         private int id_stationField;
         
         private int km_size_stationField;
+        
+        private double latitude_stationField;
+        
+        private double longitude_stationField;
         
         private string name_stationField;
         
@@ -91,19 +93,6 @@ namespace FloK.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string gps_station {
-            get {
-                return this.gps_stationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.gps_stationField, value) != true)) {
-                    this.gps_stationField = value;
-                    this.RaisePropertyChanged("gps_station");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int height_station {
             get {
                 return this.height_stationField;
@@ -143,6 +132,32 @@ namespace FloK.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public double latitude_station {
+            get {
+                return this.latitude_stationField;
+            }
+            set {
+                if ((this.latitude_stationField.Equals(value) != true)) {
+                    this.latitude_stationField = value;
+                    this.RaisePropertyChanged("latitude_station");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double longitude_station {
+            get {
+                return this.longitude_stationField;
+            }
+            set {
+                if ((this.longitude_stationField.Equals(value) != true)) {
+                    this.longitude_stationField = value;
+                    this.RaisePropertyChanged("longitude_station");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string name_station {
             get {
                 return this.name_stationField;
@@ -169,19 +184,53 @@ namespace FloK.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetNearestStations", ReplyAction="http://tempuri.org/IService1/GetNearestStationsResponse")]
+        System.IAsyncResult BeginGetNearestStations(double myLatitude, double myLongitude, float km, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> EndGetNearestStations(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetAllStations", ReplyAction="http://tempuri.org/IService1/GetAllStationsResponse")]
         System.IAsyncResult BeginGetAllStations(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> EndGetAllStations(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/isLoginInDB", ReplyAction="http://tempuri.org/IService1/isLoginInDBResponse")]
+        System.IAsyncResult BeginisLoginInDB(string login, System.AsyncCallback callback, object asyncState);
+        
+        bool EndisLoginInDB(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/isUserInDB", ReplyAction="http://tempuri.org/IService1/isUserInDBResponse")]
         System.IAsyncResult BeginisUserInDB(string login, string password, System.AsyncCallback callback, object asyncState);
         
         bool EndisUserInDB(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
+        System.IAsyncResult BeginCreateUser(string login, string mail, string pwd, System.AsyncCallback callback, object asyncState);
+        
+        bool EndCreateUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : FloK.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetNearestStationsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetNearestStationsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station>)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -199,6 +248,25 @@ namespace FloK.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class isLoginInDBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public isLoginInDBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -224,7 +292,32 @@ namespace FloK.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<FloK.ServiceReference1.IService1>, FloK.ServiceReference1.IService1 {
+        
+        private BeginOperationDelegate onBeginGetNearestStationsDelegate;
+        
+        private EndOperationDelegate onEndGetNearestStationsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetNearestStationsCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetAllStationsDelegate;
         
@@ -232,11 +325,23 @@ namespace FloK.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetAllStationsCompletedDelegate;
         
+        private BeginOperationDelegate onBeginisLoginInDBDelegate;
+        
+        private EndOperationDelegate onEndisLoginInDBDelegate;
+        
+        private System.Threading.SendOrPostCallback onisLoginInDBCompletedDelegate;
+        
         private BeginOperationDelegate onBeginisUserInDBDelegate;
         
         private EndOperationDelegate onEndisUserInDBDelegate;
         
         private System.Threading.SendOrPostCallback onisUserInDBCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateUserDelegate;
+        
+        private EndOperationDelegate onEndCreateUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateUserCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -291,13 +396,69 @@ namespace FloK.ServiceReference1 {
             }
         }
         
+        public event System.EventHandler<GetNearestStationsCompletedEventArgs> GetNearestStationsCompleted;
+        
         public event System.EventHandler<GetAllStationsCompletedEventArgs> GetAllStationsCompleted;
         
+        public event System.EventHandler<isLoginInDBCompletedEventArgs> isLoginInDBCompleted;
+        
         public event System.EventHandler<isUserInDBCompletedEventArgs> isUserInDBCompleted;
+        
+        public event System.EventHandler<CreateUserCompletedEventArgs> CreateUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult FloK.ServiceReference1.IService1.BeginGetNearestStations(double myLatitude, double myLongitude, float km, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetNearestStations(myLatitude, myLongitude, km, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> FloK.ServiceReference1.IService1.EndGetNearestStations(System.IAsyncResult result) {
+            return base.Channel.EndGetNearestStations(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetNearestStations(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            double myLatitude = ((double)(inValues[0]));
+            double myLongitude = ((double)(inValues[1]));
+            float km = ((float)(inValues[2]));
+            return ((FloK.ServiceReference1.IService1)(this)).BeginGetNearestStations(myLatitude, myLongitude, km, callback, asyncState);
+        }
+        
+        private object[] OnEndGetNearestStations(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> retVal = ((FloK.ServiceReference1.IService1)(this)).EndGetNearestStations(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetNearestStationsCompleted(object state) {
+            if ((this.GetNearestStationsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetNearestStationsCompleted(this, new GetNearestStationsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetNearestStationsAsync(double myLatitude, double myLongitude, float km) {
+            this.GetNearestStationsAsync(myLatitude, myLongitude, km, null);
+        }
+        
+        public void GetNearestStationsAsync(double myLatitude, double myLongitude, float km, object userState) {
+            if ((this.onBeginGetNearestStationsDelegate == null)) {
+                this.onBeginGetNearestStationsDelegate = new BeginOperationDelegate(this.OnBeginGetNearestStations);
+            }
+            if ((this.onEndGetNearestStationsDelegate == null)) {
+                this.onEndGetNearestStationsDelegate = new EndOperationDelegate(this.OnEndGetNearestStations);
+            }
+            if ((this.onGetNearestStationsCompletedDelegate == null)) {
+                this.onGetNearestStationsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetNearestStationsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetNearestStationsDelegate, new object[] {
+                        myLatitude,
+                        myLongitude,
+                        km}, this.onEndGetNearestStationsDelegate, this.onGetNearestStationsCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult FloK.ServiceReference1.IService1.BeginGetAllStations(System.AsyncCallback callback, object asyncState) {
@@ -341,6 +502,52 @@ namespace FloK.ServiceReference1 {
                 this.onGetAllStationsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllStationsCompleted);
             }
             base.InvokeAsync(this.onBeginGetAllStationsDelegate, null, this.onEndGetAllStationsDelegate, this.onGetAllStationsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult FloK.ServiceReference1.IService1.BeginisLoginInDB(string login, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginisLoginInDB(login, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool FloK.ServiceReference1.IService1.EndisLoginInDB(System.IAsyncResult result) {
+            return base.Channel.EndisLoginInDB(result);
+        }
+        
+        private System.IAsyncResult OnBeginisLoginInDB(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string login = ((string)(inValues[0]));
+            return ((FloK.ServiceReference1.IService1)(this)).BeginisLoginInDB(login, callback, asyncState);
+        }
+        
+        private object[] OnEndisLoginInDB(System.IAsyncResult result) {
+            bool retVal = ((FloK.ServiceReference1.IService1)(this)).EndisLoginInDB(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnisLoginInDBCompleted(object state) {
+            if ((this.isLoginInDBCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.isLoginInDBCompleted(this, new isLoginInDBCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void isLoginInDBAsync(string login) {
+            this.isLoginInDBAsync(login, null);
+        }
+        
+        public void isLoginInDBAsync(string login, object userState) {
+            if ((this.onBeginisLoginInDBDelegate == null)) {
+                this.onBeginisLoginInDBDelegate = new BeginOperationDelegate(this.OnBeginisLoginInDB);
+            }
+            if ((this.onEndisLoginInDBDelegate == null)) {
+                this.onEndisLoginInDBDelegate = new EndOperationDelegate(this.OnEndisLoginInDB);
+            }
+            if ((this.onisLoginInDBCompletedDelegate == null)) {
+                this.onisLoginInDBCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnisLoginInDBCompleted);
+            }
+            base.InvokeAsync(this.onBeginisLoginInDBDelegate, new object[] {
+                        login}, this.onEndisLoginInDBDelegate, this.onisLoginInDBCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -389,6 +596,56 @@ namespace FloK.ServiceReference1 {
             base.InvokeAsync(this.onBeginisUserInDBDelegate, new object[] {
                         login,
                         password}, this.onEndisUserInDBDelegate, this.onisUserInDBCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult FloK.ServiceReference1.IService1.BeginCreateUser(string login, string mail, string pwd, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateUser(login, mail, pwd, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool FloK.ServiceReference1.IService1.EndCreateUser(System.IAsyncResult result) {
+            return base.Channel.EndCreateUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string login = ((string)(inValues[0]));
+            string mail = ((string)(inValues[1]));
+            string pwd = ((string)(inValues[2]));
+            return ((FloK.ServiceReference1.IService1)(this)).BeginCreateUser(login, mail, pwd, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateUser(System.IAsyncResult result) {
+            bool retVal = ((FloK.ServiceReference1.IService1)(this)).EndCreateUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateUserCompleted(object state) {
+            if ((this.CreateUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateUserCompleted(this, new CreateUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateUserAsync(string login, string mail, string pwd) {
+            this.CreateUserAsync(login, mail, pwd, null);
+        }
+        
+        public void CreateUserAsync(string login, string mail, string pwd, object userState) {
+            if ((this.onBeginCreateUserDelegate == null)) {
+                this.onBeginCreateUserDelegate = new BeginOperationDelegate(this.OnBeginCreateUser);
+            }
+            if ((this.onEndCreateUserDelegate == null)) {
+                this.onEndCreateUserDelegate = new EndOperationDelegate(this.OnEndCreateUser);
+            }
+            if ((this.onCreateUserCompletedDelegate == null)) {
+                this.onCreateUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateUserDelegate, new object[] {
+                        login,
+                        mail,
+                        pwd}, this.onEndCreateUserDelegate, this.onCreateUserCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -467,6 +724,21 @@ namespace FloK.ServiceReference1 {
                     base(client) {
             }
             
+            public System.IAsyncResult BeginGetNearestStations(double myLatitude, double myLongitude, float km, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = myLatitude;
+                _args[1] = myLongitude;
+                _args[2] = km;
+                System.IAsyncResult _result = base.BeginInvoke("GetNearestStations", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> EndGetNearestStations(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> _result = ((System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station>)(base.EndInvoke("GetNearestStations", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BeginGetAllStations(System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[0];
                 System.IAsyncResult _result = base.BeginInvoke("GetAllStations", _args, callback, asyncState);
@@ -476,6 +748,19 @@ namespace FloK.ServiceReference1 {
             public System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> EndGetAllStations(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station> _result = ((System.Collections.ObjectModel.ObservableCollection<FloK.ServiceReference1.Station>)(base.EndInvoke("GetAllStations", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginisLoginInDB(string login, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = login;
+                System.IAsyncResult _result = base.BeginInvoke("isLoginInDB", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndisLoginInDB(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("isLoginInDB", _args, result)));
                 return _result;
             }
             
@@ -490,6 +775,21 @@ namespace FloK.ServiceReference1 {
             public bool EndisUserInDB(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 bool _result = ((bool)(base.EndInvoke("isUserInDB", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginCreateUser(string login, string mail, string pwd, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = login;
+                _args[1] = mail;
+                _args[2] = pwd;
+                System.IAsyncResult _result = base.BeginInvoke("CreateUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndCreateUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("CreateUser", _args, result)));
                 return _result;
             }
         }

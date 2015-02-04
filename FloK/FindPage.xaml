@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps">
 
     <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -22,12 +22,15 @@
 
         <!--TitlePanel contient le nom de l'application et le titre de la page-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="MON APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="nom de la page" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="FloK" Style="{StaticResource PhoneTextNormalStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,37,12,-37">
+            <my:Map Height="374" HorizontalAlignment="Left" Name="map_find" VerticalAlignment="Top" Width="456" CredentialsProvider="AjWdQ1rhT-6mavceCEuBI7ctxHS978f3oOHMG19m-BxuIXTo6Cv0HHPYv7SC1zJd" />
+        </Grid>
+        <Button Content="OK" Grid.RowSpan="2" Height="72" HorizontalAlignment="Left" Margin="372,39,0,0" Name="btn_find_ok" VerticalAlignment="Top" Width="108" Click="btn_find_ok_Click" />
+        <TextBox Height="72" HorizontalAlignment="Left" Margin="0,39,0,0" Name="tb_find_stations" Text="Find Stations next to..." VerticalAlignment="Top" Width="387" Grid.RowSpan="2" Tap="tb_find_stations_Tap" />
     </Grid>
  
     <!--Exemple de code illustrant l'utilisation de l'ApplicationBar-->

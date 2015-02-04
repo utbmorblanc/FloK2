@@ -12,10 +12,11 @@
       <xs:element minOccurs="0" name="address_number_station" type="xs:int" />
       <xs:element minOccurs="0" name="address_street_station" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="addresse_city_station" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="gps_station" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="height_station" type="xs:int" />
       <xs:element minOccurs="0" name="id_station" type="xs:int" />
       <xs:element minOccurs="0" name="km_size_station" type="xs:int" />
+      <xs:element minOccurs="0" name="latitude_station" type="xs:double" />
+      <xs:element minOccurs="0" name="longitude_station" type="xs:double" />
       <xs:element minOccurs="0" name="name_station" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
