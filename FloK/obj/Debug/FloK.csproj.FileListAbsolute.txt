@@ -10,3 +10,17 @@ C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.dl
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.pdb
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\XapCacheFile.xml
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\MainPage.g.i.cs
+C:\Users\val\Documents\FloK2\FloK\Bin\Debug\Background.png
+C:\Users\val\Documents\FloK2\FloK\Bin\Debug\FloK.dll
+C:\Users\val\Documents\FloK2\FloK\Bin\Debug\FloK.pdb
+C:\Users\val\Documents\FloK2\FloK\Bin\Debug\AppManifest.xaml
+C:\Users\val\Documents\FloK2\FloK\Bin\Debug\FloK.xap
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\App.g.i.cs
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\MainPage.g.i.cs
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\MenuPage.g.i.cs
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\FloK.g.resources
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\FloK.dll
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\FloK.pdb
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\XapCacheFile.xml
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\FindPage.g.i.cs
+C:\Users\val\Documents\FloK2\FloK\obj\Debug\Page1.g.i.cs
