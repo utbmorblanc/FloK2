@@ -52,8 +52,8 @@ namespace FloK
                     if (this.tb_pw_create_1.Password == this.tb_pw_create_2.Password)
                     {
                         //si le mail à un format ok
-                        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                        Match match = regex.Match(this.tb_pw_create_1.Password);
+                        Regex regex = new Regex(@"([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)");
+                        Match match = regex.Match(this.tb_creation_email.Text);
                         if (match.Success)
                         {
                             flok_ws.isLoginInDBAsync(this.tb_creation_login.Text);
@@ -157,7 +157,7 @@ namespace FloK
                 //on redirige vers la page d'accueil
                 try
                 {
-                    NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                    NavigationService.Navigate(new Uri("/MainPage.xaml?login="+this.tb_creation_login.Text, UriKind.Relative));
                 }
                 catch (Exception ex)
                 {
