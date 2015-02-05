@@ -36,5 +36,17 @@ namespace FloK
                 Console.WriteLine(ex.Message);
             }
         }
+
+        private void bt_give_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                NavigationService.Navigate(new Uri("/GivePage.xaml", UriKind.Relative));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

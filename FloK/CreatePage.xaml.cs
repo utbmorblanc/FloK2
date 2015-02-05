@@ -95,6 +95,7 @@ namespace FloK
 
         private void tb_creation_email_Tap(object sender, GestureEventArgs e)
         {
+            this.tb_creation_email.Text = "";
             this.tb_create_error.Text = "";
         }
 

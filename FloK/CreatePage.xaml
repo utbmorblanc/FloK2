@@ -31,7 +31,7 @@
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="39,44,0,0" Name="textBlock1" Text="Enter a login" VerticalAlignment="Top" />
             <TextBox Height="72" HorizontalAlignment="Left" Margin="33,66,0,0" Name="tb_creation_login" Text="" VerticalAlignment="Top" Width="329" Tap="tb_creation_login_Tap" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="39,210,0,0" Name="textBlock2" Text="Please enter a valid email address" VerticalAlignment="Top" />
-            <TextBox Height="72" HorizontalAlignment="Left" Margin="33,232,0,0" Name="tb_creation_email" Text="" VerticalAlignment="Top" Width="393" Tap="tb_creation_email_Tap" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="33,232,0,0" Name="tb_creation_email" Text="example@domain.xx" VerticalAlignment="Top" Width="393" Tap="tb_creation_email_Tap" TextAlignment="Center" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="33,307,0,0" Name="textBlock3" Text="" VerticalAlignment="Top" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="39,435,0,0" Name="textBlock4" Text="Enter the password again" VerticalAlignment="Top" />
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="39,330,0,0" Name="textBlock5" Text="Please enter a password (min 5 letters)" VerticalAlignment="Top" />
