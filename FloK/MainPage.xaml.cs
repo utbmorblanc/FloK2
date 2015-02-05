@@ -118,5 +118,17 @@ namespace FloK
         }
 
 
+        // this function is used to get the parameters passed from another page
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e); 
+            string login;
+            if(NavigationContext.QueryString.TryGetValue("login",out login))
+            {
+                this.tb_login.Text = login;
+            }  
+        }
+
+
     }
 }
