@@ -30,3 +30,20 @@ C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Microso
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\CreatePage.g.i.cs
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.csprojResolveAssemblyReference.cache
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\Background.png
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\FloK.dll
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\FloK.pdb
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\AppManifest.xaml
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\FloK.xap
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\Microsoft.Phone.Controls.Maps.dll
+C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\App.g.i.cs
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\CreatePage.g.i.cs
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\MainPage.g.i.cs
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\MenuPage.g.i.cs
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\FindPage.g.i.cs
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\Page1.g.i.cs
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\FloK.g.resources
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\FloK.dll
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\FloK.pdb
+C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\XapCacheFile.xml

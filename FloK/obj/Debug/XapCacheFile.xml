@@ -1,11 +1,11 @@
-﻿<xapCache source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\FloK.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="04/02/2015 18:55:05">
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="03/02/2015 22:34:33" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Background.png" archivePath="Background.png" lastWriteTime="03/02/2015 19:46:32" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="03/02/2015 23:14:08" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.dll" archivePath="FloK.dll" lastWriteTime="04/02/2015 18:55:04" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="29/08/2011 23:49:08" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="04/02/2015 18:17:45" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="03/02/2015 19:46:32" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="04/02/2015 18:17:45" />
-  <file source="C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="03/02/2015 19:46:32" />
+﻿<xapCache source="C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\FloK.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="05/02/2015 09:27:17">
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="05/02/2015 09:18:56" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\Background.png" archivePath="Background.png" lastWriteTime="05/02/2015 09:18:56" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="05/02/2015 09:18:56" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\obj\Debug\FloK.dll" archivePath="FloK.dll" lastWriteTime="05/02/2015 09:27:16" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="15/09/2011 16:36:26" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="05/02/2015 09:18:56" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="05/02/2015 09:18:56" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="05/02/2015 09:27:17" />
+  <file source="C:\Users\LERAY\Documents\FloK5\FloK\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="05/02/2015 09:18:56" />
 </xapCache>
