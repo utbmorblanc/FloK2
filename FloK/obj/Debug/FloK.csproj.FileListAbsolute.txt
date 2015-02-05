@@ -30,3 +30,4 @@ C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Microso
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\Bin\Debug\Microsoft.Phone.Controls.Maps.xml
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\CreatePage.g.i.cs
 C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\FloK.csprojResolveAssemblyReference.cache
+C:\Users\chris\Documents\Visual Studio 2010\Projects\FloK\FloK\obj\Debug\GivePage.g.i.cs
